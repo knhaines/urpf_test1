@@ -1,0 +1,7 @@
+---
+- name: Configure uRPF for L3 Interfaces
+  cisco.ios.ios_config:
+    lines:
+      - ip verify unicast source reachable-via rx
+    parents: "{{item }}"
+  with_items: "{{ urpf_interfaces }}"

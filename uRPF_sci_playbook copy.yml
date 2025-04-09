@@ -1,0 +1,85 @@
+---
+- name: Configure Cisco Lines
+  hosts: switches
+  gather_facts: no
+  connection: network_cli
+  vars_files:
+    - /home/serverlocal/cisco_timeExec/cisco_creds.yml
+
+  tasks:
+    # VLAN 510
+    - name: Configure uRPF for Layer3 Interface 510, which can include SVIs.
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 510
+
+    #### Need to discuss this Application SVI for consideration of uRPF, since this can break application communications.
+    # - name: Configure uRPF for Layer3 Interface 511, which can include SVIs.
+    #   cisco.ios.ios_config:
+    #     lines:
+    #       - ip verify unicast source reachable-via rx
+    #     parents: interface vlan 511
+
+    # VLAN 512
+    - name: Cuonfigure uRPF for Layer3 Interface 512, which can include SVIs.
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 512
+
+    # VLAN 513
+    - name: Configure uRPF for Layer3 Interface 513, which can include SVIs.
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 513
+
+    # VLAN 514
+    - name: Configure uRPF for Layer3 Interface 514, which can include SVIs.
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 514
+
+    # VLAN 515
+    - name: Configure uRPF for Layer3 Interface 515, which can include SVIs.
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 515
+
+    # VLAN 520
+    - name: Configure uRPF for Layer3 Interface 520, which can include SVIs.
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 520
+
+    # VLAN 521
+    - name: Configure uRPF for Layer3 Interface 521, which can include SVIs.
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 521
+
+    # VLAN 587
+    - name: Configure uRPF for Layer3 Interface Vlan 587, which can include SVIs.
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 587
+
+    # VLAN 588
+    - name: Configure uRPF for Layer3 Interface 588, which can include SVIs.
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 588
+
+    # VLAN 598
+    - name: Configure uRPF for Layer3 Interface Vlan 598, which can include SVIs.
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 598

@@ -1,0 +1,100 @@
+---
+- name: Configure Cisco Lines
+  hosts: switches
+  gather_facts: no
+  connection: network_cli
+  vars_files:
+    - /home/serverlocal/cisco_timeExec/cisco_creds.yml
+
+  tasks:
+
+    # VLAN 161
+    - name: Configure uRPF for Layer3 Interface VLAN 161
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 161
+
+    # VLAN 162
+    - name: Configure uRPF for Layer3 Interface VLAN 162
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 162
+
+    # VLAN 180
+    - name: Configure uRPF for Layer3 Interface VLAN 180
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 180
+
+    ###### Uncomment if you want to include VLAN 181 (caution with applications)
+    # - name: Configure uRPF for Layer3 Interface VLAN 181
+    #   cisco.ios.ios_config:
+    #     lines:
+    #       - ip verify unicast source reachable-via rx
+    #     parents: interface vlan 181
+
+    # VLAN 182
+    - name: Configure uRPF for Layer3 Interface VLAN 182
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 182
+
+    # VLAN 183
+    - name: Configure uRPF for Layer3 Interface VLAN 183
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 183
+
+    # VLAN 184
+    - name: Configure uRPF for Layer3 Interface VLAN 184
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 184
+
+    # VLAN 185
+    - name: Configure uRPF for Layer3 Interface VLAN 185
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 185
+
+    # VLAN 187
+    - name: Configure uRPF for Layer3 Interface VLAN 187
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 187
+
+    # VLAN 188
+    - name: Configure uRPF for Layer3 Interface VLAN 188
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 188
+
+    # VLAN 195
+    - name: Configure uRPF for Layer3 Interface VLAN 195
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 195
+
+    # VLAN 196
+    - name: Configure uRPF for Layer3 Interface VLAN 196
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 196
+
+    # VLAN 198
+    - name: Configure uRPF for Layer3 Interface VLAN 198
+      cisco.ios.ios_config:
+        lines:
+          - ip verify unicast source reachable-via rx
+        parents: interface vlan 198

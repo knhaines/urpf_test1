@@ -1,0 +1,30 @@
+- name: Create VLANs 182-198
+  hosts: switches
+  gather_facts: no
+  connection: network_cli
+  vars_files:
+    - /home/serverlocal/cisco_timeExec/cisco_creds.yml
+
+  tasks:
+    - name: Create VLANs 182 to 198
+      cisco.ios.ios_config:
+        lines:
+          - "vlan {{ item }}"
+      loop:
+        - 182
+        - 183
+        - 184
+        - 185
+        - 186
+        - 187
+        - 188
+        - 189
+        - 190
+        - 191
+        - 192
+        - 193
+        - 194
+        - 195
+        - 196
+        - 197
+        - 198

@@ -1,0 +1,12 @@
+---
+urpf_interfaces:
+  - interface vlan 510
+  - interface vlan 512
+  - interface vlan 513
+  - interface vlan 514
+  - interface vlan 515
+  - interface vlan 520
+  - interface vlan 521
+  - interface vlan 587
+  - interface vlan 588
+  - interface vlan 598
